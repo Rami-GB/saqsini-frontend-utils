@@ -1,0 +1,11 @@
+{
+    "presets": [
+        [
+            "@babel/preste-env",
+            {
+                "modules": true
+            }
+        ]
+    ],
+    "plugins": []
+}
