@@ -1,4 +1,4 @@
-import { post } from './config';
+import { post } from '../config';
 
 export const signup = async (userName, email, password) => {
     try {
@@ -10,7 +10,6 @@ export const signup = async (userName, email, password) => {
                 password
             }
         })
-        console.log(data)
         localStorage.setItem('Auth', `Bearer ${data.token}`);
         return data;
     } catch (e) {

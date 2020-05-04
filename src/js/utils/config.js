@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const corsOrigin = 'https://cors-anywhere.herokuapp.com/';
-const baseUrl = 'https://saqsini.herokuapp.com'
+const baseUrl = 'https://saqsini-api.herokuapp.com'
 
 export const post = axios.create({
     method: 'POST',

@@ -1,4 +1,4 @@
-import { post } from './config';
+import { post } from '../config';
 
 
 
@@ -11,7 +11,7 @@ export const login = async (email, password) => {
                 password
             }
         })
-        console.log(data)
+        
         localStorage.setItem('Auth', `Bearer ${data.token}`);
         return data;
     } catch (e) {

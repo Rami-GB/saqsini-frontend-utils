@@ -1,4 +1,4 @@
-import { post } from './config'
+import { post } from '../config'
 
 export const logout = async () => {
     try {
