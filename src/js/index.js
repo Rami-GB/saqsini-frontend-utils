@@ -14,32 +14,29 @@ import { updateProfile } from './utils/user/updateProfile';
 import { addProfileImg } from './utils/user/addProfileImg';
 import { addBackgroundImg } from './utils/user/addBackgroundImg';
 
+import { addSkill } from './utils/skill/addSkill';
+import { rateSkill } from './utils/skill/rateSkill';
+import { getMySkills } from './utils/skill/getMySkills';
+import { getOthersSkills } from './utils/skill/getOthersSkills';
+import { getSkillByName } from './utils/skill/getSkillByName';
+
 
 const email = 'l.rami@gmail.com';
 const password = 'bonjour123';
 const userName = 'malibu';
+
+const email2 = 'g.rami@gmail.com';
 
 (async () => {
     hello();
     console.log('je suis la');
 
     //let data = await login(email, password);
-    let data = await login(email, password);
-    console.log(data)
-    const updates = { userName: 'imane', gender: 'female' }
-    
-    document.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        let formData = new FormData();
-        let imagefile = document.querySelector('#file');
-        formData.append("backgroundPicture", imagefile.files[0]);
-        try {
-            await addBackgroundImg(formData);
-            document.querySelector('#image').src = '';
-            let data = await getOwnProfile();
-            document.querySelector('#image').src = data.backgroundUrl;
-        } catch (error) { console.log(error) }
-    })
+    let user1 = await login(email, password);
+    console.log(user1)
+    user1 = await getSkillByName('chorba');
+    console.log(user1)
+
     //data = await getOtherProfile(data._id)
     //console.log(data)
 })()

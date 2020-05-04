@@ -1,5 +1,4 @@
 import { post } from '../config';
-import axios from 'axios'
 
 export const addProfileImg = async (file) => {
     const data = await post({
@@ -7,7 +6,6 @@ export const addProfileImg = async (file) => {
         data: file,
         headers: {
             'Content-Type': 'multipart/form-data',
-            'Authorization': localStorage.getItem('Auth'),
         }
     })
 
