@@ -19,6 +19,8 @@ import { rateSkill } from './utils/skill/rateSkill';
 import { getMySkills } from './utils/skill/getMySkills';
 import { getOthersSkills } from './utils/skill/getOthersSkills';
 import { getSkillByName } from './utils/skill/getSkillByName';
+import { deleteSkill } from './utils/skill/deleteSkill';
+import { updateSkill } from './utils/skill/updateSkill';
 
 
 const email = 'l.rami@gmail.com';
@@ -34,6 +36,9 @@ const email2 = 'g.rami@gmail.com';
     //let data = await login(email, password);
     let user1 = await login(email, password);
     console.log(user1)
+    let skill = await addSkill('chorba', 'kilami');
+    skill = await updateSkill(skill._id, 'khladar waldih');
+    console.log(skill)
     user1 = await getSkillByName('chorba');
     console.log(user1)
 
