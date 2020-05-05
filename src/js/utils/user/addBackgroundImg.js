@@ -12,6 +12,9 @@ export const addBackgroundImg = async (file) => {
     return data;
 }
 
+//THE response of addBackgroundImg is nothing
+// otherwise u get an error !!
+
 /*
 //-----THE JS CODE to upload background pcture
 

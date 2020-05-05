@@ -12,6 +12,10 @@ export const addProfileImg = async (file) => {
     return data;
 }
 
+//THE response of addProfileImg is nothing
+// otherwise u get an error !!
+
+
 /*
 //-----THE JS CODE to upload profile pcture
 
