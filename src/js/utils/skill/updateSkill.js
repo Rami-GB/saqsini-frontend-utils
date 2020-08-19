@@ -1,10 +1,13 @@
 import { patch } from '../config';
 
-export const updateSkill = async (skill_id, description) => {
+export const updateSkill = async (skill_id, description, token) => {
     const { data } = await patch({
         url: `/skills/me/${skill_id}`,
         data: {
             description
+        },
+        headers: {
+            "Authorization": `Bearer ${token}` 
         }
     })
 

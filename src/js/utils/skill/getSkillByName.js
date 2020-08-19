@@ -1,8 +1,11 @@
 import { get } from '../config';
 
-export const getSkillByName = async (skillName) => {
+export const getSkillByName = async (skillName, token) => {
     const { data } = await get({
-        url: `/skills/${skillName}`
+        url: `/skills/${skillName}`,
+        headers: {
+            "Authorization": `Bearer ${token}` 
+        }
     })
 
     return data;

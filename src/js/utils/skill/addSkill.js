@@ -1,11 +1,14 @@
 import { post } from '../config';
 
-export const addSkill = async (skillName, description) => {
+export const addSkill = async (skillName, description, token) => {
     const { data } = await post({
         url: '/skills',
         data: {
             skill: skillName,
             description
+        },
+        headers: {
+            "Authorization": `Bearer ${token}` 
         }
     })
 

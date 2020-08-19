@@ -1,10 +1,13 @@
 import { post } from '../config';
 
-export const rateSkill = async (skill_Id, rate) => {
+export const rateSkill = async (skill_Id, rate, token) => {
     const { data } = await post({
         url: `/skills/${skill_Id}/rate`,
         data: {
             rate
+        },
+        headers: {
+            "Authorization": `Bearer ${token}` 
         }
     })
 

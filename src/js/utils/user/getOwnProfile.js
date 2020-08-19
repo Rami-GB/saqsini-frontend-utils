@@ -1,8 +1,11 @@
 import { get } from '../config';
 
-export const getOwnProfile = async () => {
+export const getOwnProfile = async (token) => {
     const {data} = await get({
-        url: '/users/me'
+        url: '/users/me',
+        headers: {
+            "Authorization": `Bearer ${token}` 
+        }
     })
 
     return data;

@@ -1,8 +1,11 @@
 import { get } from '../config';
 
-export const getOthersSkills = async (user_id) => {
+export const getOthersSkills = async (user_id, token) => {
     const { data } = await get({
-        url: `/skills/user/${user_id}`
+        url: `/skills/user/${user_id}`,
+        headers: {
+            "Authorization": `Bearer ${token}` 
+        }
     })
 
     return data;

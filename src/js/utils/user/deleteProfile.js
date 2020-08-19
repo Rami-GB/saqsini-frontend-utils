@@ -1,8 +1,11 @@
 import { remove } from '../config';
 
-export const deleteProfile = async () => {
+export const deleteProfile = async (token) => {
     const { data } = await remove({
-        url: `/users/me`
+        url: `/users/me`,
+        headers: {
+            "Authorization": `Bearer ${token}` 
+        }
     })
 
     return data;

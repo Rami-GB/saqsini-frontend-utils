@@ -1,11 +1,3 @@
 {
-    "presets": [
-        [
-            "@babel/preste-env",
-            {
-                "modules": true
-            }
-        ]
-    ],
-    "plugins": []
+  "presets": [["@babel/preset-env", { "targets": "defaults" }]]
 }

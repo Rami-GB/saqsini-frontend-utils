@@ -1,11 +1,12 @@
 import { post } from '../config';
 
-export const addBackgroundImg = async (file) => {
+export const addBackgroundImg = async (file, token) => {
     const data = await post({
         url: '/users/me/backgroundPicture',
         data: file,
         headers: {
             'Content-Type': 'multipart/form-data',
+            "Authorization": `Bearer ${token}` 
         }
     })
 

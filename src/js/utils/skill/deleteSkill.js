@@ -1,8 +1,11 @@
 import { remove } from '../config';
 
-export const deleteSkill = async (skill_id) => {
+export const deleteSkill = async (skill_id, token) => {
     const { data } = await remove({
-        url: `/skills/${skill_id}`
+        url: `/skills/${skill_id}`,
+        headers: {
+            "Authorization": `Bearer ${token}` 
+        }
     })
 
     return data;
